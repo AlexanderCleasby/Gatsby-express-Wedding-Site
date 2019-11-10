@@ -1,0 +1,13 @@
+[
+    {
+        "title":"The Wedding!",
+        "desc":"Come join us to celebrate the marriage of Emily and Alex.  Reception to follow.",
+        "address":"1700 1st St NW, Washington, DC 20001",
+        "coords":{"lat":38.9128731,"lng":-77.0126191}
+    },
+    {
+        "title":"Post Celebration Brunch",
+        "desc":"Enjoy a brunch the morning after the wedding courtesy of Richard and Jennifer Carlson.",
+        "address":"3925 Davis Place NW, Washington, DC 20007"
+    }
+]
