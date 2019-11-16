@@ -1,6 +1,7 @@
 const express = require('express')
 const gatsbyExpress = require('gatsby-plugin-express');
 const mongoose = require('mongoose')
+const bodyParser = require("body-parser")
 const app = express()
 
 if (process.env.NODE_ENV === 'development'){
@@ -15,6 +16,12 @@ app.get('/api',(req,res)=>{
     res.send('foo')
 })
 
+//new invite({code:"ABCDE",name:"alex",plus1s:2},(err,x)=>console.log(err))
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.use('/api', require('./api'))
 app.use(express.static('public/'));
 app.use(gatsbyExpress('server/gatsby-express.json', {
   publicDir: 'public/',
