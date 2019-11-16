@@ -13,12 +13,13 @@ const Events = ()=>{
                 title
                 desc
                 address
+                coords { lat lng }
             }
         }
     }`).allEventsJson.nodes
     console.log(eventsData)
     return <div >
-        {eventsData.map((event)=><Event {...event} />)}
+        {eventsData.map((event)=><Event showMap={true} {...event} />)}
         </div>
 }
 

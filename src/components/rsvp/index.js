@@ -1,14 +1,16 @@
 import React from "react";
+import Event from "../events/event";
 import CodeForm from "./codeForm";
 
 
 class Rsvp extends React.Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
-            user:'',
+            name:'',
             code:'',
-            events:[]
+            events:[],
+            plus1s:0
         }
     }
 
@@ -27,14 +29,29 @@ class Rsvp extends React.Component{
         .catch((err)=>{console.log(err.message)})
     }
 
-    valChange = (e)=>{
+    codeChange = (e)=>{
         if(e.target.value.length<=5){
             this.setState({[e.target.name]:e.target.value.toUpperCase()})
         }
     }
 
     render(){
-        return <CodeForm submit = {this.submitCode} valChange = {this.valChange} code={this.state.code} />
+        if(!this.state.name){
+            return <CodeForm submit = {this.submitCode} valChange = {this.codeChange} code={this.state.code} />
+        }
+        else{
+            return <React.Fragment>
+                <h3>{this.state.name}</h3>
+                {this.props.events.map((event,key)=>(
+                    <Event key={key} {...event}>
+                        <div>
+                            foo
+                        </div>
+                    </Event>
+                 ))
+                }
+            </React.Fragment>
+        }
     }
 }
 
