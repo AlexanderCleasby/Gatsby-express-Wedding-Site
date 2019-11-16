@@ -9,7 +9,7 @@ class Rsvp extends React.Component{
         this.state = {
             name:'',
             code:'',
-            events:[],
+            attendingEvents:[],
             plus1s:0
         }
     }
@@ -29,11 +29,45 @@ class Rsvp extends React.Component{
         .catch((err)=>{console.log(err.message)})
     }
 
+    postRSVP = (e)=>{
+        e.preventDefault()
+    }
+
     codeChange = (e)=>{
         if(e.target.value.length<=5){
             this.setState({[e.target.name]:e.target.value.toUpperCase()})
         }
     }
+
+    attendingChange = (e)=>{
+        let checked = e.target.checked,
+        title = e.target.name,
+        attendingEvents = this.state.attendingEvents
+        if (checked){
+            this.setState({attendingEvents:[...attendingEvents,{title:title,attendees:1}]})
+        }
+        else{
+            this.setState({attendingEvents:attendingEvents.filter((event)=>event.title!==title)})
+        }
+    }
+
+    attendeesSelect=({event})=>{
+        let numArray=[...new Array(this.state.plus1s+1).keys()].slice(1)
+        let eventAttended = this.state.attendingEvents.map((e)=>e.title).includes(event)
+        if(this.state.plus1s>1 && eventAttended){
+            return (
+            <React.Fragment>
+                <label>Great! how many in your party?</label>
+                <select>
+                    {numArray.map((v,i)=><option key={i}>{v}</option>)}
+                </select>
+            </React.Fragment>)
+        }
+        else{
+            return ""
+        }
+    }
+
 
     render(){
         if(!this.state.name){
@@ -42,14 +76,18 @@ class Rsvp extends React.Component{
         else{
             return <React.Fragment>
                 <h3>{this.state.name}</h3>
-                {this.props.events.map((event,key)=>(
-                    <Event key={key} {...event}>
-                        <div>
-                            foo
-                        </div>
-                    </Event>
-                 ))
-                }
+                <form onSubmit={this.postRSVP}>
+                    {this.props.events.map((event,key)=>(
+                        <Event key={key} {...event}>
+                            <div>
+                                <input type="checkbox" name={event.title} onChange={this.attendingChange}  /> <label>I'm going</label>
+                                <this.attendeesSelect event={event.title} />
+                            </div>
+                        </Event>
+                     ))
+                    }
+                    <input type="submit" />
+                </form>
             </React.Fragment>
         }
     }
