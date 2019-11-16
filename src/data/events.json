@@ -8,6 +8,7 @@
     {
         "title":"Post Celebration Brunch",
         "desc":"Enjoy a brunch the morning after the wedding courtesy of Richard and Jennifer Carlson.",
-        "address":"3925 Davis Place NW, Washington, DC 20007"
+        "address":"3925 Davis Place NW, Washington, DC 20007",
+        "coords":{"lat":38.9239296,"lng":-77.0805126}
     }
 ]
