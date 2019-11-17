@@ -1,9 +1,26 @@
 $primary:rgb(35, 131, 55);
 $secondary:rgb(207, 189, 21);
+
+.form-control:focus{
+    border-color: $primary;  
+    box-shadow: $primary; 
+    -webkit-box-shadow: none;
+    box-shadow: 0 0 12px 0.5rem rgba( $primary, .25 );
+} 
+
+input{
+    text-align: center;
+}
+
+.row{
+    margin-left:0 !important;
+    margin-right:0 !important;
+}
+
 .jumbotron{
     margin: 0 auto;
     background-size: cover;
-    background-color: white;
+    background-color: white !important;
     background-image: url(../images/invitebg.svg);
     align-content: center;
     display: flex;
@@ -22,4 +39,13 @@ $secondary:rgb(207, 189, 21);
             font-family: 'Comfortaa';
         }
     }
+}
+
+
+
+::selection {
+    background: lighten( $primary, 10% );
+}
+::-moz-selection {
+    background: lighten( $primary, 10 ); 
 }

@@ -57,8 +57,8 @@ class Rsvp extends React.Component{
         if(this.state.plus1s>1 && eventAttended){
             return (
             <React.Fragment>
-                <label>Great! how many in your party?</label>
-                <select>
+                <label className="col-sm-5 col-form-label">Great! how many in your party?</label>
+                <select className="form-control col-sm-2">
                     {numArray.map((v,i)=><option key={i}>{v}</option>)}
                 </select>
             </React.Fragment>)
@@ -79,14 +79,17 @@ class Rsvp extends React.Component{
                 <form onSubmit={this.postRSVP}>
                     {this.props.events.map((event,key)=>(
                         <Event key={key} {...event}>
-                            <div>
-                                <input type="checkbox" name={event.title} onChange={this.attendingChange}  /> <label>I'm going</label>
+                            <div className="row">
+                                <div className="col-sm-2 form-check col-form-label">
+                                    <input className="form-check-input" type="checkbox" name={event.title} onChange={this.attendingChange}  />
+                                    <label className="form-check-label">I'm going</label>
+                                </div>
                                 <this.attendeesSelect event={event.title} />
                             </div>
                         </Event>
                      ))
                     }
-                    <input type="submit" />
+                    <input className="btn btn-primary" type="submit" />
                 </form>
             </React.Fragment>
         }
