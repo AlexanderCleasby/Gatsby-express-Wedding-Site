@@ -13,6 +13,8 @@ const Events = ()=>{
                 title
                 desc
                 address
+                placeId
+                venue
                 coords { lat lng }
             }
         }
