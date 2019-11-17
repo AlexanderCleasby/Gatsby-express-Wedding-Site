@@ -21,7 +21,7 @@ app.get('/api',(req,res)=>{
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use('/api', require('./api'))
+app.use('/api', require('./api.js'))
 app.use(express.static('public/'));
 app.use(gatsbyExpress('server/gatsby-express.json', {
   publicDir: 'public/',
