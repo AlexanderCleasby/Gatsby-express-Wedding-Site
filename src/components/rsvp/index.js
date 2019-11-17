@@ -58,14 +58,28 @@ class Rsvp extends React.Component{
             return (
             <React.Fragment>
                 <label className="col-sm-5 col-form-label">Great! how many in your party?</label>
-                <select className="form-control col-sm-2">
-                    {numArray.map((v,i)=><option key={i}>{v}</option>)}
+                <select className="form-control col-sm-2" onChange={this.attendeesChange.bind(this,event)}>
+                    {numArray.map((v,i)=><option key={i} >{v}</option>)}
                 </select>
             </React.Fragment>)
         }
         else{
             return ""
         }
+    }
+
+    attendeesChange=(selectedEvent,e)=>{
+        let attendees = parseInt(e.target.value)
+        this.setState((prevState,props)=>{
+            let attendingEvents = prevState.attendingEvents
+            for(let i=0;i<attendingEvents.length;i++){
+                if (attendingEvents[i].title===selectedEvent){
+                    attendingEvents[i].attendees = attendees
+                    return prevState
+                }
+            }
+        }
+        )
     }
 
 
