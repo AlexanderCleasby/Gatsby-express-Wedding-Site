@@ -1,4 +1,5 @@
 import React from "react";
+import { Alert } from 'reactstrap';
 import Event from "../events/event";
 import CodeForm from "./codeForm";
 
@@ -10,7 +11,8 @@ class Rsvp extends React.Component{
             name:'',
             code:'',
             attendingEvents:[],
-            plus1s:0
+            plus1s:0,
+            alert:{text:'',color:'success'}
         }
     }
 
@@ -25,12 +27,25 @@ class Rsvp extends React.Component{
                 return res.json()
             }
         })
-        .then((res)=>this.setState((prev)=>({...prev,name:res.name,plus1s:res.plus1s})))
-        .catch((err)=>{console.log(err.message)})
+        .then((res)=>this.setState((prev)=>({...prev,name:res.name,plus1s:res.plus1s,alert:{text:''}})))
+        .catch((err)=>{
+            this.setState({alert:{text:"That code wasn't found, please try again.",color:"danger"}})
+            console.log(err.message)
+        })
     }
 
     postRSVP = (e)=>{
         e.preventDefault()
+        let data = {code:this.state.code,events:this.state.attendingEvents}
+        fetch('/api/rsvp',{method:"POST",body:JSON.stringify(data),headers:{"Content-Type": "application/json"}})
+        .then((res)=>{
+            if (!res.ok){
+                this.setState({alert:{text:"There was an error handling you RSVP, please try again.",color:"danger"}})
+            }
+            else{
+                this.setState({alert:{text:"You have successfully RSVP'd, can't wait to see you there!",color:"success"}})
+            }
+        })
     }
 
     codeChange = (e)=>{
@@ -68,6 +83,8 @@ class Rsvp extends React.Component{
         }
     }
 
+    alert = ()=>this.state.alert.text ? <Alert color={this.state.alert.color} >{this.state.alert.text}</Alert> : ""
+
     attendeesChange=(selectedEvent,e)=>{
         let attendees = parseInt(e.target.value)
         this.setState((prevState,props)=>{
@@ -85,10 +102,14 @@ class Rsvp extends React.Component{
 
     render(){
         if(!this.state.name){
-            return <CodeForm submit = {this.submitCode} valChange = {this.codeChange} code={this.state.code} />
+            return <React.Fragment>
+                <this.alert />
+                <CodeForm submit = {this.submitCode} valChange = {this.codeChange} code={this.state.code} />
+            </React.Fragment>
         }
         else{
             return <React.Fragment>
+                <this.alert />
                 <h3>{this.state.name}</h3>
                 <form onSubmit={this.postRSVP}>
                     {this.props.events.map((event,key)=>(
