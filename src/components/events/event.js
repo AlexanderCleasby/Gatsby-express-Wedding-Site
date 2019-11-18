@@ -9,6 +9,7 @@ const Event = ({title,desc,address,children,coords,placeId,venue,showMap})=>{
                 {title}
             </h2>
             <h4>
+                {venue}<br></br>
                 {address}
                 <a href={`https://www.google.com/maps/search/?api=1&query=${venue}&query_place_id=${placeId}`}>Nav</a>
             </h4>
