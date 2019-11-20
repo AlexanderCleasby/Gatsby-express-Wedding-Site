@@ -83,7 +83,7 @@ class Rsvp extends React.Component{
         }
     }
 
-    alert = ()=>this.state.alert.text ? <Alert color={this.state.alert.color} >{this.state.alert.text}</Alert> : ""
+    alert = ()=>this.state.alert.text ? <Alert color={`${this.state.alert.color} fade`} >{this.state.alert.text}</Alert> : ""
 
     attendeesChange=(selectedEvent,e)=>{
         let attendees = parseInt(e.target.value)

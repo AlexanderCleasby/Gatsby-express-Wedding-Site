@@ -19,18 +19,18 @@ router.post('/invite',(req,res)=>{
             {
                 events:req.body.events
             },
-                (err,x)=>{
-                    if(x){
-                        console.log()
-                        res.send(x)
-                    }
-                    else{
-                        console.log(error)
-                        res.error(400).send('err writing to databse')
-                    }
-
+            {runValidators:true},
+            (err,x)=>{
+                if(x){
+                    console.log('Updated RSVP')
+                    res.send(x)
                 }
-            )
+                else{
+                    console.log(error)
+                    res.error(400).send('err writing to databse')
+                }
+            }
+        )
         
     })
 })
