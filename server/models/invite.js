@@ -5,10 +5,7 @@ const Schema = mongoose.Schema
 const rsvpSchema = new Schema({
   title:String,
   attendees:{
-    type:Number,
-    validate:[function (v){
-      return v < this.plus1s
-    }]
+    type:Number
   }
 })
 
@@ -21,5 +18,8 @@ const inviteSchema = new Schema({
 
 
 
-mongoose.model('rsvp',rsvpSchema,'rsvps')
-module.exports = mongoose.model('invite',inviteSchema)
+
+module.exports = {
+  invite:mongoose.model('invite',inviteSchema),
+  rsvp:mongoose.model('rsvp',rsvpSchema)
+}
