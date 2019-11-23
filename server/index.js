@@ -4,6 +4,8 @@ const mongoose = require('mongoose')
 const bodyParser = require("body-parser")
 const app = express()
 
+const port = process.env.PORT || 8001
+
 if (process.env.NODE_ENV === 'development'){
   require('dotenv').config()
 }
@@ -28,4 +30,4 @@ app.use(gatsbyExpress('server/gatsby-express.json', {
   redirectSlashes: true,
 }));
 
-app.listen(8001)
+app.listen(port)
