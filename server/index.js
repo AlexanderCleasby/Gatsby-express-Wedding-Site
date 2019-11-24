@@ -2,6 +2,7 @@ const express = require('express')
 const gatsbyExpress = require('gatsby-plugin-express');
 const mongoose = require('mongoose')
 const bodyParser = require("body-parser")
+const cors = require('cors')
 const app = express()
 
 const port = process.env.PORT || 8001
@@ -22,6 +23,7 @@ app.get('/api',(req,res)=>{
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+applicationCache.use(cors())
 
 app.use('/api', require('./api.js'))
 app.use(express.static('public/'));
