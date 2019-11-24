@@ -27,7 +27,7 @@ class Rsvp extends React.Component{
                 return res.json()
             }
         })
-        .then((res)=>this.setState((prev)=>({...prev,name:res.name,plus1s:res.plus1s,alert:{text:''}})))
+        .then((res)=>this.setState((prev)=>({...prev,name:res.name,plus1s:res.plus1s,alert:{text:''},attendingEvents:res.rsvps})))
         .catch((err)=>{
             this.setState({alert:{text:"That code wasn't found, please try again.",color:"danger"}})
             console.log(err.message)
@@ -73,7 +73,7 @@ class Rsvp extends React.Component{
             return (
             <React.Fragment>
                 <label className="col-sm-5 col-form-label">Great! how many in your party?</label>
-                <select className="form-control col-sm-2" onChange={this.attendeesChange.bind(this,event)}>
+                <select className="form-control col-sm-2" value={this.state.attendingEvents.find(x=>x.title===event).attendees || 1} onChange={this.attendeesChange.bind(this,event)}>
                     {numArray.map((v,i)=><option key={i} >{v}</option>)}
                 </select>
             </React.Fragment>)
@@ -116,7 +116,7 @@ class Rsvp extends React.Component{
                         <Event key={key} {...event}>
                             <div className="row">
                                 <div className="col-sm-2 form-check col-form-label">
-                                    <input className="form-check-input" type="checkbox" name={event.title} onChange={this.attendingChange}  />
+                                    <input className="form-check-input" type="checkbox" checked={!!this.state.attendingEvents.find((x)=>x.title===event.title)} name={event.title} onChange={this.attendingChange}  />
                                     <label className="form-check-label">I'm going</label>
                                 </div>
                                 <this.attendeesSelect event={event.title} />
