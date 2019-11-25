@@ -1,10 +1,37 @@
+@import '../variables.scss';
+
 .event{
     margin-bottom: 1.9em;
     font-family: 'Comfortaa';
     .header{
         margin-bottom: .7em;
         h2{
-            font-family: 'Dancing Script', cursive;;
+            font-family: 'Dancing Script', cursive;
+            font-size:200%;
         }
+    }
+}
+
+.marker{
+    transform: translate(-50%, -100%);
+    font-size:50px;
+    color: $primary;
+    padding: 15px 10px;
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+.navigate{
+    margin:auto;
+    display: block;
+    width:30%;
+}
+
+@media only screen and (max-width: 480px) {
+    .navigate{
+        width:100%;
     }
 }
