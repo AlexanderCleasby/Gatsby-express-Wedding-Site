@@ -37,7 +37,7 @@ class Rsvp extends React.Component{
     postRSVP = (e)=>{
         e.preventDefault()
         let data = {code:this.state.code,events:this.state.attendingEvents}
-        fetch('https://emilyandalex.herokuapp.com//api/rsvp',{method:"POST",body:JSON.stringify(data),headers:{"Content-Type": "application/json"}})
+        fetch('https://emilyandalex.herokuapp.com/api/rsvp',{method:"POST",body:JSON.stringify(data),headers:{"Content-Type": "application/json"}})
         .then((res)=>{
             if (!res.ok){
                 this.setState({alert:{text:"There was an error handling you RSVP, please try again.",color:"danger"}})
