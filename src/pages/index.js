@@ -9,6 +9,9 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Events />
+    <div className="rsvp-btn">
+        <Link to="/rsvp" className="btn-lg btn btn-secondary">RSVP</Link>
+    </div>
   </Layout>
 )
 
