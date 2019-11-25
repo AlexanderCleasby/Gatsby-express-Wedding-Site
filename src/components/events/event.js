@@ -1,5 +1,6 @@
 import React from 'react'
 import Map from './map'
+import {FaLocationArrow} from 'react-icons/fa'
 import './events.scss'
 
 const Event = ({title,desc,address,children,coords,placeId,venue,showMap})=>{
@@ -11,14 +12,14 @@ const Event = ({title,desc,address,children,coords,placeId,venue,showMap})=>{
             <h4>
                 {venue}<br></br>
                 {address}
-                <a href={`https://www.google.com/maps/search/?api=1&query=${venue}&query_place_id=${placeId}`}>Nav</a>
             </h4>
         </div>
         <p>
             {desc}
         </p>
         {children}
-        {(()=>showMap ? <Map coords={coords} /> : "")()}
+        {showMap ? <Map coords={coords} /> : ""}
+        { placeId ? <a className="navigate btn btn-primary" href={`https://www.google.com/maps/search/?api=1&query=${venue}&query_place_id=${placeId}`}>Navigate <FaLocationArrow/></a> : ""}
     </div>
 }
 

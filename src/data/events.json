@@ -2,16 +2,20 @@
     {
         "title":"The Wedding!",
         "desc":"Come join us to celebrate the marriage of Emily and Alex.  Reception to follow.",
+        "date":"February 29th, 2019 ",
         "venue":"Big Bear Cafe",
         "placeId":"ChIJWbmml_e3t4kRDzgyQ5HJP_c",
         "address":"1700 1st St NW, Washington, DC 20001",
-        "coords":{"lat":38.9128731,"lng":-77.0126191}
+        "coords":{"lat":38.912738,"lng":-77.012425}
     },
     {
         "title":"Post Celebration Brunch",
+        "date":"March 1st 2019",
         "desc":"Enjoy a brunch the morning after the wedding courtesy of Richard and Jennifer Carlson.",
-        "placeId":"ChIJueLEYSK2t4kRiMWr29n_5XY",
-        "address":"3925 Davis Place NW, Washington, DC 20007",
-        "coords":{"lat":38.9239296,"lng":-77.0805126}
+        "placeId":"ChIJYYIPyCS2t4kRJuapjf9L-9Q",
+        "venue":"Heritage India",
+        "address":"3238 Wisconsin Ave NW, Washington, DC 20016",
+        "coords":{"lat":38.933313,"lng":-77.072803}
+        
     }
 ]

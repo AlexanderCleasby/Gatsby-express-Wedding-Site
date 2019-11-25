@@ -1,5 +1,5 @@
-$primary:rgb(35, 131, 55);
-$secondary:rgb(207, 189, 21);
+
+@import './variables.scss';
 
 .form-control:focus{
     border-color: $primary;  
@@ -33,13 +33,30 @@ input{
         padding:20px;
         h1{
             font-family: 'Dancing Script', cursive;
-            font-size:8vw;
+            font-size:6vw;
         }
         h3{
             font-family: 'Comfortaa';
+            font-size:2vw;
         }
     }
 }
+
+@media only screen and (max-width: 480px) {
+    .jumbotron{
+        padding: 10px !important;
+        .textBox{
+            padding:10px;
+            h1{
+                font-size: 10vw;
+            }
+            h3{
+                font-size: 4vw;
+            }
+        }
+    }
+  }
+  
 
 
 
