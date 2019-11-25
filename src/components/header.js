@@ -6,11 +6,6 @@ const Header = ({ siteTitle }) => (
   <header
   >
     <div
-      style={{
-        margin: `0 auto`,
-        
-        
-      }}
       className="jumbotron"
     >
       <div className="textBox">
@@ -20,7 +15,6 @@ const Header = ({ siteTitle }) => (
         <h3>
           Are getting married!
         </h3>
-      
       </div>
     </div>
   </header>
