@@ -18,7 +18,7 @@ class Rsvp extends React.Component{
 
     submitCode=(e)=>{
         e.preventDefault()
-        fetch('https://rsvp-now.herokuapp.com//api/invite',{method: 'POST',body:JSON.stringify({code:this.state.code}),headers: {"Content-Type": "application/json"}})
+        fetch('https://rsvp-now.herokuapp.com/api/invite',{method: 'POST',body:JSON.stringify({code:this.state.code}),headers: {"Content-Type": "application/json"}})
         .then((res)=>{
             if (!res.ok){
                 throw Error(res.status)
