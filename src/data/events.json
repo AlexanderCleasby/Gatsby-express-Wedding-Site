@@ -2,15 +2,24 @@
     {
         "title":"The Wedding!",
         "desc":"Come join us to celebrate the marriage of Emily and Alex.  Reception to follow.",
-        "date":"February 29th, 2019 ",
+        "date":"February 29th, 2020 ",
         "venue":"Big Bear Cafe",
         "placeId":"ChIJWbmml_e3t4kRDzgyQ5HJP_c",
         "address":"1700 1st St NW, Washington, DC 20001",
         "coords":{"lat":38.912738,"lng":-77.012425}
     },
     {
+        "title":"Pre-Wedding Dinner",
+        "date":"February 28th, 2020",
+        "desc":"Enjoy a dinner the evening before the wedding courtesy of Geoff Cleasby and Molly O'Neal.",
+        "placeId":"ChIJX2DN_423t4kRXPqouiDTazQ",
+        "venue":"Clyde's",
+        "address":"707 7th St NW, Washington, DC 20001",
+        "coords":{"lat":38.898844,"lng":-77.021753}
+    },
+    {
         "title":"Post Celebration Brunch",
-        "date":"March 1st 2019",
+        "date":"March 1st 2020",
         "desc":"Enjoy a brunch the morning after the wedding courtesy of Richard and Jennifer Carlson.",
         "placeId":"ChIJYYIPyCS2t4kRJuapjf9L-9Q",
         "venue":"Heritage India",
