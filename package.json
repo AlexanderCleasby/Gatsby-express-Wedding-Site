@@ -46,7 +46,8 @@
     "start": "node server/index.js",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "server": "NODE_ENV=development node server/index.js"
+    "server": "NODE_ENV=development node server/index.js",
+    "listrsvp":"NODE_ENV=development node ./server/admin.js list"
   },
   "repository": {
     "type": "git",
