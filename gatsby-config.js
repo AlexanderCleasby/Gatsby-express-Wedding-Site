@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `Alex and Emily are getting married!`,
+    brideGroom: `Emily and Alex`,
+    subHeader:`are getting married!`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `Alexander Cleasby`,
   },
   proxy: {
     prefix: "/api",

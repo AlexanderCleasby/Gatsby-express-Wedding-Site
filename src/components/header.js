@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ brideGroom, subHeader }) => (
   <header
   >
     <div
@@ -10,10 +10,10 @@ const Header = ({ siteTitle }) => (
     >
       <div className="textBox">
         <h1 style={{ margin: 0 }} >
-            Alex and Emily
+            {brideGroom}
         </h1>
         <h3>
-          Are getting married!
+          {subHeader}
         </h3>
       </div>
     </div>
