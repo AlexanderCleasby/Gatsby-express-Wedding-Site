@@ -24,6 +24,7 @@ input{
 
 .jumbotron{
     margin: 0 auto;
+    margin-bottom: 0px !important;
     background-size: cover;
     background-color: white !important;
     background-image: url(../images/invitebg.svg);
@@ -53,12 +54,12 @@ input{
 .rsvp-btn{
     margin:0 auto;
     font-family: 'Comfortaa', cursive;
-    text-align: center;
-    .btn{
-        margin:0 auto;
-        display: block;
-        width: 30%;
-        font-size:3vw;
+    width: calc(50% - 10%);
+    box-sizing: border-box;
+    margin: 0px;
+    margin-bottom: 2rem;
+    &:nth-of-type(odd){
+        margin-right: 20%;
     }
 }
 

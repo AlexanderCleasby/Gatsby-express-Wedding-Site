@@ -5,3 +5,5 @@
  */
 
 // You can delete this file if you're not using it
+require('dotenv').config()
+process.env.GATSBY_REGISTRY_URL = process.env.REGISTRY_URL
