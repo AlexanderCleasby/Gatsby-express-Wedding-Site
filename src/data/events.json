@@ -2,25 +2,37 @@
     {
         "title":"The Wedding!",
         "desc":"Come join us to celebrate the marriage of Emily and Alex.  Reception to follow.",
-        "date":"February 29th, 2019 ",
+        "date":"February 29th, 2019",
+        "time":"6:00 PM",
         "venue":"Big Bear Cafe",
         "placeId":"ChIJWbmml_e3t4kRDzgyQ5HJP_c",
         "address":"1700 1st St NW, Washington, DC 20001",
-        "coords":{"lat":38.912738,"lng":-77.012425}
+        "coords":{"lat":38.912738,"lng":-77.012425},
+        "subevents":[
+            {"time":"6:00PM","desc":"Arrive at Big Bear"},
+            {"time":"6:30PM", "desc":"Wedding Ceramony"},
+            {"time":"7:00PM", "desc":"Cocktail Hour"},
+            {"time":"7:45PM", "desc":"Dinner"}
+        ]
     },
     {
         "title":"Pre-Wedding Dinner",
         "date":"February 28th, 2020",
+        "time":"6:30PM",
         "desc":"Enjoy a dinner the evening before the wedding courtesy of Geoff Cleasby and Molly O'Neal.",
         "placeId":"ChIJmemt2Lq3t4kRNolUNIyjT_Q",
         "venue":"Historic DACOR Bacon House",
         "address":"1801 F St NW, Washington, DC 20006",
-        "coords":{"lat":38.897508,"lng":-77.041799}
+        "coords":{"lat":38.897508,"lng":-77.041799},
+        "subevents":[
+            {"time":"6:30PM", "desc":"Drinks"},
+            {"time":"7:15PM", "desc":"Dinner"}
+        ]
     },
     {
-
         "title":"Post Celebration Brunch",
-        "date":"March 1st 2019",
+        "date":"March 1st, 2019",
+        "time":"11:00 AM",
         "desc":"Enjoy a brunch the morning after the wedding courtesy of Richard and Jennifer Carlson.",
         "placeId":"ChIJYYIPyCS2t4kRJuapjf9L-9Q",
         "venue":"Heritage India",
