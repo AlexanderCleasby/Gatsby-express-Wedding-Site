@@ -12,6 +12,9 @@ const Events = ()=>{
             nodes {
                 title
                 desc
+                date
+                time
+                subevents { time desc }
                 address
                 placeId
                 venue
@@ -21,7 +24,7 @@ const Events = ()=>{
     }`).allEventsJson.nodes
     console.log(eventsData)
     return <div >
-        {eventsData.map((event)=><Event showMap={true} {...event} />)}
+        {eventsData.map((event, i)=><Event key={i} showMap={true} {...event} />)}
         </div>
 }
 

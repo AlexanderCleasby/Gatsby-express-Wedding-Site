@@ -3,12 +3,15 @@ import Map from './map'
 import {FaLocationArrow} from 'react-icons/fa'
 import './events.scss'
 
-const Event = ({title,desc,address,children,coords,placeId,venue,showMap})=>{
+const Event = ({title,desc,address,children,coords,placeId,date,subevents,time,venue,showMap})=>{
     return <div className="event">
         <div className="header">
             <h2>
                 {title}
             </h2>
+            <h3>
+                {date} {time}
+            </h3>
             <h4>
                 {venue}<br></br>
                 {address}
@@ -16,6 +19,7 @@ const Event = ({title,desc,address,children,coords,placeId,venue,showMap})=>{
         </div>
         <p>
             {desc}
+            {(subevents && showMap) ? subevents.map(({desc,time},i)=><div>{time} - {desc}</div>): ''}
         </p>
         {children}
         {showMap ? <Map coords={coords} /> : ""}
