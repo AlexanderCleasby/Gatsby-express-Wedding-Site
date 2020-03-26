@@ -19,8 +19,10 @@ const Event = ({title,desc,address,children,coords,placeId,date,subevents,time,v
         </div>
         <p>
             {desc}
-            {(subevents && showMap) ? subevents.map(({desc,time},i)=><div>{time} - {desc}</div>): ''}
         </p>
+        <div className="subEvent">
+            {(subevents && showMap) ? subevents.map(({desc,time},i)=><div key={i}>{time} - {desc}</div>): ''}
+        </div>
         {children}
         {showMap ? <Map coords={coords} /> : ""}
         { placeId ? <a className="navigate btn btn-primary" href={`https://www.google.com/maps/search/?api=1&query=${venue}&query_place_id=${placeId}`}>Navigate <FaLocationArrow/></a> : ""}
