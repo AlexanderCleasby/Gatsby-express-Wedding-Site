@@ -71,3 +71,4 @@ yarn-error.log
 server/gatsby-express.json
 .vscode
 *.env
+src/photos
